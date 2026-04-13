@@ -65,8 +65,6 @@ h3 {
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 1.4;
-    padding-top: 5rem;
-    padding-bottom: 1rem;
     text-align: center;
 }
 
@@ -197,14 +195,124 @@ h1 {
     padding: 2rem 0;
 }
 
-.services .flex-wrapper.main {
+.services .main {
     flex-direction: column;
     font-family: var(--primary-font-family);
 }
 
 .services h3 {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+}
+
+.services h4 {
     font-family: var(--secondary-font-family);
     font-weight: 800;
     font-size: 2.5rem;
     text-transform: uppercase;
+    padding: 10rem 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.clim h4 {
+    background-image: url("./assets/img/services-cooling.png");
+}
+
+.heat h4 {
+    background-image: url("./assets/img/services-heating.png");
+}
+
+.services .main * {
+    width: 100%;
+    border-radius: 1.5rem;
+}
+
+.services>.wrapper>.flex-wrapper {
+    justify-content: center;
+    gap: 1rem;
+}
+
+.services__item a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+
+    background-color: #fff;
+    color: var(--primary-color);
+
+    padding: 1rem 3rem 1rem 1.5rem;
+}
+
+.services .flex-wrapper.main {
+    gap: 1rem;
+    flex: 1;
+}
+
+.services__item a::before {
+    content: "";
+    display: inline-block;
+    aspect-ratio: 1;
+    background-color: var(--primary-color);
+    mask-size: contain;
+    mask-size: no-repeat;
+    padding: 2rem;
+    margin-right: 2rem;
+}
+
+.clim__services a::before {
+    mask-image: url("/assets/img/snowflake-svgrepo-com.svg");
+}
+
+.heat__services a::before {
+    mask-image: url("./assets/img/flame-svgrepo-com.svg");
+}
+
+.services__cta {
+    font-family: var(--primary-font-family);
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.5;
+
+    padding: 3rem 0;
+}
+
+.services__cta span {
+    display: block;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.services__cta .btn {
+    font-weight: 600;
+}
+
+/* ------ INSTALLATION -------*/
+
+.installation p {
+    font-family: var(--primary-font-family);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding-bottom: 2rem;
+}
+
+.installation .flex-wrapper {
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 3rem;
+    margin: auto;
+}
+
+.installation__image {
+    display: block;
+    border-radius: 1.5rem;
+    width: 100%;
+}
+
+.installation .img-container {
+    width: 300%;
 }
