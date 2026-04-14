@@ -12,7 +12,7 @@
 /* ----------- GENERAL --------- */
 
 :root {
-    --primary-color: #040036;
+    --primary-color: #1c2336;
     --secondary-color: #ed8824;
     --text-color: #535353;
     --primary-font-family: "Open Sans";
@@ -35,7 +35,7 @@ li {
     width: fit-content;
     background-color: var(--secondary-color);
     padding: 1.5rem 2rem;
-    border-radius: 1.5rem;
+    border-radius: 2rem;
     color: #fff;
     text-transform: uppercase;
     font-family: var(--secondary-font-family);
@@ -57,9 +57,25 @@ h2 {
     margin: auto;
 }
 
+section {
+    position: relative;
+    isolation: isolate;
+}
+
 .dark-theme {
     background-color: var(--primary-color);
     color: white;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.01;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .dark-theme * {
@@ -72,6 +88,10 @@ h3 {
     font-size: 1.5rem;
     line-height: 1.4;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
 }
 
 /* --------- HEADER -------- */
@@ -92,13 +112,19 @@ header * {
     color: inherit;
     font: inherit;
     text-transform: uppercase;
+    text-wrap: nowrap;
+}
+
+header .wrapper {
+    padding: 0;
 }
 
 header>div {
     margin: auto;
 }
 
-nav li {
+header a {
+    display: inline-block;
     padding: 3rem 0.5rem;
 }
 
@@ -163,6 +189,15 @@ h1 {
 
 /* ------------ ABOUT ----------- */
 
+.about::before {
+    background-image: url("./assets/img/hvac-technician.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.06;
+    filter: grayscale(100%);
+}
+
 .about p {
     font-family: var(--primary-font-family);
     font-size: 1.2rem;
@@ -171,6 +206,10 @@ h1 {
     color: var(--text-color);
     max-width: 75ch;
     padding-bottom: 2rem;
+}
+
+.about .about__last-paragraph {
+    padding-bottom: 0;
 }
 
 .about img {
@@ -182,6 +221,10 @@ h1 {
 }
 
 /* --------- SERVICES --------- */
+
+.services::before {
+    background-image: url("./assets/img/oblique-pattern.jpg");
+}
 
 .services * {
     color: white;
@@ -259,7 +302,7 @@ h1 {
     aspect-ratio: 1;
     background-color: var(--primary-color);
     mask-size: contain;
-    mask-size: no-repeat;
+    mask-repeat: no-repeat;
     padding: 2rem;
     margin-right: 2rem;
 }
@@ -278,7 +321,7 @@ h1 {
     font-size: 1.5rem;
     line-height: 1.5;
 
-    padding: 3rem 0;
+    padding: 3rem 0 0 0;
 }
 
 .services__cta span {
@@ -287,11 +330,16 @@ h1 {
     padding-bottom: 2rem;
 }
 
-.services__cta .btn {
-    font-weight: 600;
-}
-
 /* ------ INSTALLATION -------*/
+
+.installation::before {
+    background-image: url("./assets/img/hvac-install.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: grayscale(100%);
+    opacity: 0.06;
+}
 
 .installation p {
     font-family: var(--primary-font-family);
@@ -305,7 +353,6 @@ h1 {
     align-items: center;
     gap: 1rem;
     margin: auto;
-    padding-bottom: 3rem;
 }
 
 .installation__image {
@@ -324,6 +371,14 @@ h1 {
 
 /* ---- ZONES ---- */
 
+.zones::before {
+    background-image: url("/assets/img/worldmap.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: center;
+    background-position: center;
+}
+
 .zones__item {
     font-family: var(--primary-font-family);
     font-size: 1.5rem;
@@ -336,12 +391,12 @@ h1 {
 .zones__item::before {
     content: "";
     display: inline-block;
+    width: 2rem;
+    aspect-ratio: 1;
+    background-color: #fff;
     mask-image: url("./assets/img/map-point-wave-svgrepo-com.svg");
     mask-size: cover;
     mask-repeat: no-repeat;
-    background-color: white;
-    width: 2rem;
-    height: 2rem;
     margin-right: 2rem;
 }
 
@@ -361,6 +416,16 @@ h1 {
 }
 
 /* ---- CONTACT ----- */
+
+.contact-form::before {
+    background-image: url("./assets/img/hvac-working.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    filter: grayscale(100%);
+    opacity: 0.05;
+}
 
 .contact-form {
     margin: auto;
@@ -415,7 +480,7 @@ h1 {
 
 .contact-form .text-container {
     padding: 2rem;
-    border-radius: 1.5rem;
+    border-radius: 1.5em;
 }
 
 .contact-form form {
@@ -439,14 +504,14 @@ h1 {
 
 .contact-form .contact-info {
     flex-direction: column;
-    align-items: end;
+    align-items: center;
     justify-content: center;
     gap: 3rem;
     font-family: var(--primary-font-family);
-}
-
-.info__item {
-    margin-bottom: 2rem;
+    background: white;
+    border-radius: 1.5rem;
+    box-shadow: 0px 0px 15px 0px rgba(28, 35, 54, 0.5);
+    color: var(--text-color);
 }
 
 .info__hours {
@@ -459,6 +524,86 @@ h1 {
 
 .info__title-schedule {
     vertical-align: top;
+}
+
+.info {
+    width: 50%;
+    margin: auto;
+}
+
+.info__item p,
+.info__hours {
+    position: relative;
+}
+
+.info__title {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.info__title::before {
+    content: "";
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 1rem;
+    aspect-ratio: 1;
+    background-color: var(--primary-color);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    height: fit-content;
+}
+
+.info__address .info__title::before {
+    mask-image: url("./assets/img/map-point-wave-svgrepo-com.svg");
+}
+
+.info__phone .info__title::before {
+    mask-image: url("./assets/img/phone.svg");
+}
+
+.info__schedule .info__title::before {
+    mask-image: url("./assets/img/clock.svg");
+}
+
+.info__address,
+.info__phone {
+    padding-bottom: 1.5rem;
+}
+
+.info .flex-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info__schedule {
+    position: relative;
+}
+
+.info__schedule .info__title {
+    text-align: right;
+}
+
+.info__item>* {
+    flex: 1;
+}
+
+.info__hour-item {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.2rem;
+}
+
+.info__hour-item * {
+    flex: 1;
+    width: 100%;
+}
+
+.info__hour-day {
+    text-align: right;
 }
 
 .contact-form__logo {

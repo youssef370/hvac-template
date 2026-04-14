@@ -13,11 +13,11 @@
         <div class="wrapper flex-wrapper">
             <nav>
                 <ul class="flex-wrapper">
-                    <li>Climatisation</li>
-                    <li>Chauffage</li>
-                    <li>Qualité de l'air</li>
-                    <li>À propos</li>
-                    <li>Ressources</li>
+                    <li><a href=#>Climatisation</a></li>
+                    <li><a href=#>Chauffage</a></li>
+                    <li><a href=#>Qualité de l'air </a></li>
+                    <li><a href=#>À propos</a></li>
+                    <li><a href=#>Ressources</a></li>
                 </ul>
             </nav>
             <div class="phone">
@@ -60,7 +60,7 @@
                     d’expérience, $BUSINESS_NAME$ est reconnu pour son expertise, sa
                     fiabilité et la qualité de son service.
                 </p>
-                <p>
+                <p class="about__last-paragraph">
                     Appelez-nous dès maintenant : $PHONE_NUMBER$ ou
                     <a href="#" class="contact-link">contactez-nous</a> pour obtenir un
                     devis gratuit.
@@ -110,8 +110,8 @@
                 </div>
                 <p class="services__cta">
                     Appelez $PHONE_NUMBER$ <span> ou </span>
-                    <a href="" class="btn">demandez un devis en ligne</a>
                 </p>
+                <a href="" class="btn">demandez un devis en ligne</a>
             </div>
         </section>
         <section class="installation">
@@ -189,23 +189,49 @@
                     <div class="flex-wrapper contact-info contact-form__half">
                         <img class="contact-form__logo" src="./assets/img/hvac-logo.png" alt="Logo" />
                         <div class="info">
-                            <p class="info__item">
-                                <span class="info__logo info__logo-address "></span> Adresse : $ADDRESS$
-                            </p>
-                            <p class="info__item">
-                                <span class="info__logo info__logo-phone"></span> Téléphone : $PHONE_NUMBER$
-                            </p>
-                            <article class="info__item">
-                                <span class="info__logo info__logo-hours"></span>
-                                <span class="info__title-schedule">Horaires :</span>
+                            <article class="flex-wrapper info__item info__address">
+                                <p class="info__title">Adresse</p>
+                                <p class="info__content">$ADDRESS$</p>
+                            </article>
+                            <article class=" flex-wrapper info__item info__phone">
+                                <p class="info__title">Téléphone</p>
+                                <p class="info__content">$PHONE_NUMBER$</p>
+                            </article>
+                            <article class="flex-wrapper info__item info__schedule">
+
+                                <p class="info__title">Horaires</p>
                                 <ul class="info__hours">
-                                    <li class="info__hour-item">Lundi: 08h00 - 17h00</li>
-                                    <li class="info__hour-item">Mardi: 08h00 - 17h00</li>
-                                    <li class="info__hour-item">Mercredi: 08h00 - 17h00</li>
-                                    <li class="info__hour-item">Jeudi: 08h00 - 17h00</li>
-                                    <li class="info__hour-item">Vendredi: 08h00 - 13h00, 15h00 - 19h00</li>
-                                    <li class="info__hour-item">Samedi: Fermé</li>
-                                    <li class="info__hour-item">Dimanche: Fermé</li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Lundi</p>
+                                        <p class="info__hour-times">08h00 - 17h00</p>
+                                    </li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Mardi</p>
+                                        <p class="info__hour-times">08h00 - 17h00</p>
+                                    </li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Mercredi</p>
+                                        <p class="info__hour-times">08h00 - 17h00</p>
+                                    </li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Jeudi</p>
+                                        <p class="info__hour-times">08h00 - 17h00</p>
+                                    </li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Vendredi</p>
+                                        <article class="info__hour-times">
+                                            <p>08h00 - 13h00</p>
+                                            <p>15h00 - 19h00</p>
+                                        </article>
+                                    </li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Samedi</p>
+                                        <p class="info__hour-time">Fermé</p>
+                                    </li>
+                                    <li class="info__hour-item">
+                                        <p class="info__hour-day">Dimanche</p>
+                                        <p class="info__hour-time">Fermé</p>
+                                    </li>
                                 </ul>
                             </article>
                         </div>
