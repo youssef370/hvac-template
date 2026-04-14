@@ -516,6 +516,7 @@ h1 {
 
 .info__hours {
     display: inline-block;
+    width: 100%;
 }
 
 .info__hour-item {
