@@ -308,7 +308,7 @@ h1 {
 }
 
 .clim__services a::before {
-    mask-image: url("/assets/img/snowflake-svgrepo-com.svg");
+    mask-image: url("./assets/img/snowflake-svgrepo-com.svg");
 }
 
 .heat__services a::before {
