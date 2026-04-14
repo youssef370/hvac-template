@@ -36,9 +36,10 @@ li {
     background-color: var(--secondary-color);
     padding: 1.5rem 2rem;
     border-radius: 1.5rem;
-    color: white;
+    color: #fff;
     text-transform: uppercase;
     font-family: var(--secondary-font-family);
+    font-weight: 600;
 }
 
 h2 {
@@ -52,12 +53,17 @@ h2 {
 
 .wrapper {
     width: max(1200px, 80%);
+    padding: 3rem 0;
     margin: auto;
 }
 
 .dark-theme {
     background-color: var(--primary-color);
     color: white;
+}
+
+.dark-theme * {
+    color: inherit;
 }
 
 h3 {
@@ -167,10 +173,6 @@ h1 {
     padding-bottom: 2rem;
 }
 
-.about .wrapper {
-    padding-top: 4rem;
-}
-
 .about img {
     width: 70%;
     display: block;
@@ -201,7 +203,6 @@ h1 {
 }
 
 .services h3 {
-    padding-top: 5rem;
     padding-bottom: 1rem;
 }
 
@@ -303,8 +304,8 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding-top: 3rem;
     margin: auto;
+    padding-bottom: 3rem;
 }
 
 .installation__image {
@@ -314,5 +315,169 @@ h1 {
 }
 
 .installation .img-container {
-    width: 300%;
+    flex: 1;
+}
+
+.installation .text-container {
+    flex: 1;
+}
+
+/* ---- ZONES ---- */
+
+.zones__item {
+    font-family: var(--primary-font-family);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.zones__item::before {
+    content: "";
+    display: inline-block;
+    mask-image: url("./assets/img/map-point-wave-svgrepo-com.svg");
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    background-color: white;
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+}
+
+.zones__list,
+.zones__map {
+    flex: 1;
+}
+
+.zones__list {
+    padding: 3rem 0;
+}
+
+.zones .flex-wrapper {
+    gap: 10rem;
+    justify-content: space-between;
+    align-items: end;
+}
+
+/* ---- CONTACT ----- */
+
+.contact-form {
+    margin: auto;
+}
+
+.contact-form h2 {
+    padding-bottom: 3rem;
+    line-height: 1;
+    text-align: center;
+}
+
+.contact-form label,
+.contact-form input,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 0.8rem;
+}
+
+.contact-form input {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 2;
+    text-transform: capitalize;
+}
+
+.contact-form textarea {
+    font-family: inherit;
+}
+
+.contact-form .contact-container {
+    font-size: 1.2rem;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+.contact-form .dark-theme {
+    font-family: var(--primary-font-family);
+}
+
+.contact-form .text-container {
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.contact-form form {
+    padding-top: 3rem;
+}
+
+.contact-form .btn {
+    border: none;
+    margin-top: 3rem;
+    font-size: 1rem;
+}
+
+.contact-form .contact-container {
+    justify-content: center;
+    gap: 5rem;
+}
+
+.contact-form__half {
+    flex: 1;
+}
+
+.contact-form .contact-info {
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 3rem;
+    font-family: var(--primary-font-family);
+}
+
+.info__item {
+    margin-bottom: 2rem;
+}
+
+.info__hours {
+    display: inline-block;
+}
+
+.info__hour-item {
+    padding: 0 0 0.5rem;
+}
+
+.info__title-schedule {
+    vertical-align: top;
+}
+
+.contact-form__logo {
+    display: block;
+    width: max(20vw, 10rem);
+    align-self: center;
+}
+
+.contact-form .require--color {
+    color: red;
+}
+
+.contact-form .require__paragraph {
+    padding-top: 3rem;
+    font-size: 1rem;
+}
+
+.contact-form .required::after {
+    content: "*";
+    color: red;
+    padding-left: 1rem;
 }
