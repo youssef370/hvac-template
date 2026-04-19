@@ -10,25 +10,34 @@
 
 <body>
     <header>
-        <div class="wrapper flex-wrapper">
-            <nav>
-                <ul class="flex-wrapper">
-                    <li><a href=#>Climatisation</a></li>
-                    <li><a href=#>Chauffage</a></li>
-                    <li><a href=#>Qualité de l'air </a></li>
-                    <li><a href=#>À propos</a></li>
-                    <li><a href=#>Ressources</a></li>
-                </ul>
-            </nav>
-            <div class="phone">
-                <span class="telephone-svg"></span>
-                <span class="telephone-num">0 123 456 789</span>
+        <div class="wrapper">
+            <div class="burger-wrapper">
+
+                <img class="header__logo-mobile" src="./assets/img/hvac-logo-white.png" alt="">
+                <spiral-burger class="burger" label="Menu" size="48"></spiral-burger>
             </div>
-            <a href="#" class="btn cta">Contactez-nous</a>
+            <div class="nav-wrapper flex-wrapper">
+                <img class="header__logo" src="./assets/img/hvac-logo-white.png" alt="">
+                <nav id="navbar">
+                    <ul class="nav__list flex-wrapper">
+                        <li><a class="nav__link" href=#>Climatisation</a></li>
+                        <li><a class="nav__link" href=#>Chauffage</a></li>
+                        <li><a class="nav__link" href=#>Qualité de l'air </a></li>
+                        <li><a class="nav__link" href=#>À propos</a></li>
+                        <li><a class="nav__link" href=#>Ressources</a></li>
+                    </ul>
+                </nav>
+                <div class="phone">
+                    <span class="telephone-svg"></span>
+                    <span class="telephone-num">0 123 456 789</span>
+                </div>
+                <a href="#" class="btn cta">Contactez-nous</a>
+
+            </div>
         </div>
     </header>
     <main>
-        <section class="hero">
+        <section class="hero flex-wrapper border-bottom">
             <div class="wrapper flex-wrapper">
                 <h1>
                     Climatisation de qualité <br />
@@ -267,10 +276,51 @@
             </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; Tous droits réservés - 2026</p>
+    <footer class="dark-theme">
+        <div class="wrapper">
+            <img class="footer__logo" src="assets/img/hvac-logo-white.png" alt="">
+            <div class="flex-wrapper">
+                <div class="helpful-links">
+                    <h3 class="footer__heading">Liens utiles</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Accueil</a></li>
+                        <li><a href="" class="footer__link">A Propos</a></li>
+                        <li><a href="" class="footer__link">Services</a></li>
+                        <li><a href="" class="footer__link">Témoignages</a></li>
+                        <li><a href="" class="footer__link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer__services">
+                    <h3 class="footer__heading">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Pompes à chaleur</a></li>
+                        <li><a href="#" class="footer__link">Climatisation réversible sans conduits</a></li>
+                        <li><a href="#" class="footer__link">Installation de systèmes DRV</a></li>
+                        <li><a href="#" class="footer__link">Maison connectée</a></li>
+                        <li><a href="#" class="footer__link">Analyse des coûts</a></li>
+                    </ul>
+                </div>
+                <div class="hours-contact">
+                    <div class="hours">
+                        <h3>Heures de travail</h3>
+                        <ul>
+                            <li class="footer__contact-info">Lun - Jeu: 8h00 - 17h00</li>
+                            <li class="footer__contact-info">Ven: 08h00 - 13h00, 15h00 - 19h00</li>
+                            <li class="footer__contact-info">Sam, Dim: Fermé</li>
+                        </ul>
+                    </div>
+                    <div class="contact">
+                        <h3>Contact</h3>
+                        <p class="footer__contact-info">$PHONE_NUMBER$</p>
+                        <p class="footer__contact-info">$ADDRESS$</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <p class="copyright-text">&copy; Tous droits réservés - 2026</p>
     </footer>
-    <script src="main.js"></script>
+    <script type="module" src="/main.js"></script>
 </body>
 
 </html>

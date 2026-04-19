@@ -17,6 +17,10 @@
     --text-color: #535353;
     --primary-font-family: "Open Sans";
     --secondary-font-family: "Josefin Sans";
+    --font-size-big: clamp(1rem, 4vw, 10rem);
+    --font-size-medium: clamp(0.5rem, 4vw, 1.5rem);
+    --content-max-width: 1500px;
+    --flex-basis-size: 350px;
 }
 
 * {
@@ -46,15 +50,18 @@ h2 {
     font-family: var(--secondary-font-family);
     font-weight: 800;
     font-size: 2rem;
+
     line-height: 1.5;
     color: var(--primary-color);
     text-transform: uppercase;
 }
 
 .wrapper {
-    width: max(1200px, 80%);
-    padding: 3rem 0;
+    width: 90%;
+    max-width: var(--content-max-width);
+    padding: 3rem 0.5rem;
     margin: auto;
+    box-sizing: content-box;
 }
 
 section {
@@ -85,7 +92,7 @@ section::before {
 h3 {
     font-family: var(--primary-font-family);
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: var(--font-size-medium);
     line-height: 1.4;
     text-align: center;
 }
@@ -94,11 +101,15 @@ a {
     text-decoration: none;
 }
 
-/* --------- HEADER -------- */
-
 .flex-wrapper {
     display: flex;
 }
+
+.border-bottom {
+    border-bottom: 10px var(--secondary-color) solid;
+}
+
+/* --------- HEADER -------- */
 
 header {
     background-color: var(--primary-color);
@@ -128,7 +139,7 @@ header a {
     padding: 3rem 0.5rem;
 }
 
-header div.flex-wrapper {
+header .flex-wrapper {
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -140,7 +151,11 @@ header ul.flex-wrapper {
 }
 
 header .telephone-num {
-    font-size: 1.5rem;
+    font-size: var(--font-size-medium);
+}
+
+.header__logo {
+    width: 5rem;
 }
 
 /* --------- HERO ---------- */
@@ -153,20 +168,25 @@ header .telephone-num {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    padding-bottom: 8rem;
     color: white;
-    border-bottom: 10px var(--secondary-color) solid;
+    min-block-size: 80dvh;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero .flex-wrapper {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 h1 {
     font-family: var(--secondary-font-family);
     text-align: center;
-    padding-top: 12rem;
     font-size: 4rem;
     line-height: 1.1;
     font-weight: 800;
@@ -176,7 +196,7 @@ h1 {
 .hero p {
     text-align: center;
     font-family: var(--primary-font-family);
-    font-size: 1.5rem;
+    font-size: var(--font-size-medium);
     line-height: 1.1;
     font-weight: 800;
     padding-top: 0.75rem;
@@ -217,16 +237,15 @@ h1 {
     display: block;
     margin: 3rem 0;
     border-radius: 5px;
-    background: red;
 }
 
 /* --------- SERVICES --------- */
 
-.services::before {
+main .services::before {
     background-image: url("./assets/img/oblique-pattern.jpg");
 }
 
-.services * {
+main .services * {
     color: white;
     text-align: center;
 }
@@ -235,21 +254,22 @@ h1 {
     font-family: var(--primary-font-family);
     font-weight: 400;
     font-size: 1.2rem;
-    width: 50%;
+    width: 100%;
+    max-width: 70ch;
     margin: auto;
     padding: 2rem 0;
 }
 
-.services .main {
+main .services .main {
     flex-direction: column;
     font-family: var(--primary-font-family);
 }
 
-.services h3 {
+main .services h3 {
     padding-bottom: 1rem;
 }
 
-.services h4 {
+main .services h4 {
     font-family: var(--secondary-font-family);
     font-weight: 800;
     font-size: 2.5rem;
@@ -267,7 +287,7 @@ h1 {
     background-image: url("./assets/img/services-heating.png");
 }
 
-.services .main * {
+main .services .main * {
     width: 100%;
     border-radius: 1.5rem;
 }
@@ -275,9 +295,19 @@ h1 {
 .services>.wrapper>.flex-wrapper {
     justify-content: center;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.services__item a {
+main .clim {
+    margin-bottom: 3rem;
+}
+
+main .clim,
+main .heat {
+    flex-basis: var(--flex-basis-size);
+}
+
+main .services__item a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -291,12 +321,12 @@ h1 {
     padding: 1rem 3rem 1rem 1.5rem;
 }
 
-.services .flex-wrapper.main {
+main .services .flex-wrapper.main {
     gap: 1rem;
     flex: 1;
 }
 
-.services__item a::before {
+main .services__item a::before {
     content: "";
     display: inline-block;
     aspect-ratio: 1;
@@ -318,7 +348,7 @@ h1 {
 .services__cta {
     font-family: var(--primary-font-family);
     font-weight: 400;
-    font-size: 1.5rem;
+    font-size: var(--font-size-medium);
     line-height: 1.5;
 
     padding: 3rem 0 0 0;
@@ -353,6 +383,7 @@ h1 {
     align-items: center;
     gap: 1rem;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 .installation__image {
@@ -361,12 +392,9 @@ h1 {
     width: 100%;
 }
 
-.installation .img-container {
-    flex: 1;
-}
-
+.installation .img-container,
 .installation .text-container {
-    flex: 1;
+    flex: 1 1 var(--flex-basis-size);
 }
 
 /* ---- ZONES ---- */
@@ -381,7 +409,7 @@ h1 {
 
 .zones__item {
     font-family: var(--primary-font-family);
-    font-size: 1.5rem;
+    font-size: var(--font-size-medium);
     display: flex;
     align-items: center;
     text-align: left;
@@ -402,7 +430,7 @@ h1 {
 
 .zones__list,
 .zones__map {
-    flex: 1;
+    flex: 1 1 var(--flex-basis-size);
 }
 
 .zones__list {
@@ -413,6 +441,7 @@ h1 {
     gap: 10rem;
     justify-content: space-between;
     align-items: end;
+    flex-wrap: wrap;
 }
 
 /* ---- CONTACT ----- */
@@ -494,12 +523,14 @@ h1 {
 }
 
 .contact-form .contact-container {
+    flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
 }
 
 .contact-form__half {
-    flex: 1;
+    flex: 1 1 var(--flex-basis-size);
+    padding-bottom: 3rem;
 }
 
 .contact-form .contact-info {
@@ -528,13 +559,17 @@ h1 {
 }
 
 .info {
-    width: 50%;
-    margin: auto;
+    width: 100%;
 }
 
 .info__item p,
 .info__hours {
     position: relative;
+}
+
+.info__item {
+    flex-direction: column;
+    align-items: center;
 }
 
 .info__title {
@@ -555,6 +590,11 @@ h1 {
     height: fit-content;
 }
 
+.info__content,
+.info__hours {
+    padding-top: 1.2rem;
+}
+
 .info__address .info__title::before {
     mask-image: url("./assets/img/map-point-wave-svgrepo-com.svg");
 }
@@ -570,13 +610,6 @@ h1 {
 .info__address,
 .info__phone {
     padding-bottom: 1.5rem;
-}
-
-.info .flex-wrapper {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
 }
 
 .info__schedule {
@@ -626,4 +659,106 @@ h1 {
     content: "*";
     color: red;
     padding-left: 1rem;
+}
+
+/* ------- FOOTER ------- */
+
+footer {
+    font-family: var(--primary-font-family);
+}
+
+footer h3 {
+    font-family: var(--secondary-font-family);
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+}
+
+footer .flex-wrapper {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+footer .flex-wrapper>* {
+    flex-basis: var(--flex-basis-size);
+}
+
+.copyright-text {
+    text-align: center;
+    padding: 2rem;
+}
+
+footer li {
+    font-size: 1rem;
+}
+
+.footer__link,
+.footer__contact-info {
+    display: block;
+    padding: 0.2rem 0;
+}
+
+footer h3 {
+    padding-top: 2rem;
+}
+
+.footer__logo {
+    display: block;
+    width: 10rem;
+    margin-inline: auto;
+}
+
+/* ---- RESPONSIVENESS ----- */
+
+.burger {
+    display: none;
+}
+
+.header__logo-mobile {
+    display: none;
+    width: 5rem;
+}
+
+@media (max-width: 768px) {
+    .burger-wrapper {
+        display: flex;
+        justify-content: end;
+        padding: 1.5rem;
+        position: relative;
+    }
+
+    .header__logo {
+        display: none;
+    }
+
+    .header__logo-mobile {
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-wrapper {
+        display: none;
+        flex-direction: column;
+        min-block-size: 90dvh;
+    }
+
+    .nav-wrapper.open {
+        display: flex;
+    }
+
+    .nav-wrapper.open .nav__list {
+        flex-direction: column;
+    }
+
+    .nav-wrapper.open .nav__link {
+        padding: 1.5rem;
+    }
 }
