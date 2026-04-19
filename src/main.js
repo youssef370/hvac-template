@@ -1,4 +1,4 @@
-import "vanilla-hamburger/spiral-burger.js";
+import "/node_modules/vanilla-hamburger/spiral-burger.js";
 
 function initMenu() {
     const burger = document.querySelector(".burger");
